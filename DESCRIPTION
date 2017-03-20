@@ -6,7 +6,8 @@ Date: 2017-03-14
 Author: Bertie Vidgen <bertievidgen@gmail.com>
 Maintainer: Bertie Vidgen <bertievidgen@gmail.com>
 Description: Various, mostly unrelated functions for analysing and manipulating data.
-Imports: ggplot2, dplyr
+Imports: ggplot2,
+        dplyr
 License: MIT
 LazyData: TRUE
 RoxygenNote: 6.0.1

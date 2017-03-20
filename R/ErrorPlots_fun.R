@@ -12,6 +12,8 @@
  
  
 error_bars = function(df, s = NULL, draw='both'){
+  library(ggplot2)
+  library(dplyr)
   # where df= the dataframe containing the  values. It must be formated as (data.frame(x,y)) for the code to work.
   # s = a vector of cuts to split up the data by (this can also be generated automatically)
   
@@ -42,6 +44,7 @@ error_bars = function(df, s = NULL, draw='both'){
   if (class(df) != "data.frame"){
     stop("df must be a dataframe object and must have only two columns (x,y).")
   }
+  
   if (ncol(df) != 2){
     stop("df must have only two columns: (x,y)")
   }
@@ -101,7 +104,7 @@ error_bars = function(df, s = NULL, draw='both'){
     )
   
   df.summary$bin_x <- as.numeric(as.character(df.summary$bin_x))
-  df.summary$ynum = count(df.copy, bin_x)$n
+  df.summary$num = count(df.copy, bin_x)$n
   
   if (draw == 'both'){
   errorbars_plot = ggplot(df.summary, aes(bin_x, ymean)) +
