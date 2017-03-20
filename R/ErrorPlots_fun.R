@@ -115,7 +115,7 @@ error_bars = function(df, s = NULL, draw='both'){
     )
   
   df.summary$bin_x <- as.numeric(as.character(df.summary$bin_x))
-  df.summary$num = count(df.copy, bin_x)$n
+  df.summary$num = dplyr::count(df.copy, bin_x)$n
   
   if (draw == 'both'){
   errorbars_plot = ggplot(df.summary, aes(bin_x, ymean)) +
