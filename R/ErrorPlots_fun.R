@@ -53,10 +53,10 @@ error_bars = function(df, s = NULL, draw='both'){
   
   app = apply(df, 2, function(x) any(is.na(x) | is.infinite(x)))
   if (app[1] == TRUE){
-    stop("df$x contains either Infinite or NA values. These must be removed.")
+    stop("the data frame contains either Infinite or NA values. These must be removed.")
   }
   if (app[2] == TRUE){
-    stop("df$y contains either Infinite or NA values. These must be removed.")
+    stop("the data frame contains either Infinite or NA values. These must be removed.")
   }
   rm(app)
   
