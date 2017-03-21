@@ -42,10 +42,10 @@ error_bars = function(df, s = NULL, draw='both'){
   
   # check the dataframe:
   if (class(df) != "data.frame"){
-    stop("df must be a dataframe object and must have only two columns (x,y).")
+    stop("df must be a dataframe object and must have only two columns (x,y). If your input looks like a dataframe, check it by using class() and as.data.frame() functions ")
   }
   
-  # sometimes the dataframe can take on several data type objects at once (including dataframe)- so just make sure that it is actually a df:
+  # I believe that sometimes the dataframe can take on several data type objects at once (including dataframe)- so just make sure that it is actually a df:
     df = as.data.frame(df)
     
   if (ncol(df) != 2){
