@@ -1,4 +1,5 @@
 #' @title cor_plot
+#' @import ggplot2
 #' @description Plots the cor_fun output object using ggplot2. It is designed to only be used in conjunction with the output of the cor_fun() function ('cor.out'). The dotted red lines (shown only for samples), are 95% confidence intervals calculated from the original correlation.
 #' @param cor.out a cor object, as created by the cor_fun().
 #' @param results sets the number of total values that will be plotted. By default it is set to the number of cor values. Also, the maximum number of values that can be plotted is 1000.
