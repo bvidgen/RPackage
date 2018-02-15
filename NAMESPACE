@@ -2,5 +2,9 @@
 
 export(cor_fun)
 export(cor_plot)
+export(cor_pop)
+export(cor_sample)
 export(cor_scatter)
+export(cov_pop)
 export(error_bars)
+export(sd_pop)
