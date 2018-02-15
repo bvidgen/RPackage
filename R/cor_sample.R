@@ -4,9 +4,9 @@
 #' @param y a value of numeric values
 #' @return the sample level correlation of the inputs is returned.
 
-
+ 
 cor_sample = function(x, y){
-  if (!is.numeric(x) || !is.numeric(y))
+  if (!is.numeric(x) || !is.numeric(y)) 
     stop("input vector must be numeric")
   if(length(x) != length(y))
     stop("'x' and 'y' must be of equal lengths")

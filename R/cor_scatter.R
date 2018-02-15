@@ -5,7 +5,7 @@
 #' @param lags a list containing the values to be lagged
 #' @return a lattice of scatter plots.
 #' @export
-
+ 
 cor_scatter = function(x, y=NULL, lags){
   # if y is missing, then make y=x (this shows that the user wants to do autocorrelation)
   if(missing(y)) {y = x

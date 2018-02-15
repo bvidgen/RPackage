@@ -21,3 +21,4 @@ cov_pop = function(x, y){
   output = output / length(x)
   return(output)
 }
+ 
