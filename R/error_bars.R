@@ -1,6 +1,3 @@
-# ErrorPlots_fun
-# the real deal
-
 #'@title error_bars
 #'@description analysis of error bars for a variable
 #'@param df name of the dataframe that you want to analyse. This MUST be of the format data.frame(x,y). 'NA' and 'Inf' values are also not allowed.

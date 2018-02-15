@@ -1,11 +1,11 @@
 Package: rBDA
 Type: Package
-Title: RPackage - a package for functions created by Bertie Vidgen
+Title: functions for the OII's Big Data Analytics class
 Version: 0.1
 Date: 2017-03-14
 Author: Bertie Vidgen <bertievidgen@gmail.com>
 Maintainer: Bertie Vidgen <bertievidgen@gmail.com>
-Description: Various, mostly unrelated functions for analysing and manipulating data.
+Description: Various functions for analysing and manipulating data
 Imports: ggplot2,
         dplyr
 License: MIT
