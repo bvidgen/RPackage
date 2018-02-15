@@ -9,10 +9,10 @@
 # NOTE - need to add zoo to the list of package dependencies for Rccf
 time_window = function(lags, df){
   
-  if (!'zoo' %in% installed.packages())
-    stop("zoo must be installed and loaded to continue")
-  if(!"package:zoo" %in% search())
-    library(zoo)
+  #  if (!'zoo' %in% installed.packages())
+  #    stop("zoo must be installed and loaded to continue")
+  # if(!"package:zoo" %in% search())
+  #   library(zoo)
   
   df = data.frame(df) #sometimes, if e.g. a data.table df is passed then the commands don't work
   
