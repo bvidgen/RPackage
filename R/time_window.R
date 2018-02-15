@@ -1,5 +1,4 @@
 #' @title time_window
-#' @import zoo
 #' @description Calculates smoothed values for a dependent variable over different time windows
 #' @details the smoothed depndent variable value is calculated in the middle of the time window; i.e. if the window is 24 hours then the dependent variable will smooth over the previous 12 hours and the following 12 hours
 #' @param lags a vector of time periods for the dependent to be smoothed over. Periods are based on the unit of the first column in the dataframe i.e. if the first column is days then express the lag window in days (7,30,90 are recommended) or if it is in hours then express in hours (24 or 168 are recommended)
@@ -10,7 +9,10 @@
 # NOTE - need to add zoo to the list of package dependencies for Rccf
 time_window = function(lags, df){
   
-  library(zoo)
+  if (!'zoo' %in% installed.packages())
+    stop("zoo must be installed and loaded to continue")
+  if(!"package:zoo" %in% search())
+    library(zoo)
   
   df = data.frame(df) #sometimes, if e.g. a data.table df is passed then the commands don't work
   

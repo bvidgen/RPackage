@@ -1,4 +1,3 @@
-
 #' @title cor_fun
 #' @description Calculates either the cross-correlation function for two variables or the auto-correlation function for a single variable. It can be used to calculate values with bounded periodicity (i.e. the values wrap around'). It uses the population level standard deviation; as such, for self-repeating patterns the ACF does not decay over time.
 #' @details To autocorrelate a single variable, just pass x. To cross-correlate two variables, pass both x and y.
