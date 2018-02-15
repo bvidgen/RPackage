@@ -3,6 +3,7 @@
 #' @param x a vector of numeric values
 #' @param y a vector of numeric values
 #' @return the covariance of the inputs is returned.
+#' @export
 
 cov_pop = function(x, y){
   if (!is.numeric(x) || !is.numeric(y))

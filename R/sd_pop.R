@@ -2,6 +2,7 @@
 #' @description Calculates the standard deviation of a vector using n as the denominator (suitable for populations) rather than n-1 (suitable for samples).
 #' @param x a vector of numeric values
 #' @return the standard deviation of the input is returned.
+#' @export
 
 sd_pop = function(x){
   if (!is.numeric(x))

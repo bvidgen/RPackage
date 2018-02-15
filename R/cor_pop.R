@@ -3,6 +3,7 @@
 #' @param x a vector of numeric values
 #' @param y a value of numeric values
 #' @return the population level correlation of the inputs is returned.
+#' @export
 
 cor_pop = function(x, y){
   # note that for large samples the difference between cor_sample() and cor_pop() will be trivially small.

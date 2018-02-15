@@ -3,8 +3,8 @@
 #' @param x a vector of numeric values
 #' @param y a value of numeric values
 #' @return the sample level correlation of the inputs is returned.
+#' @export
 
- 
 cor_sample = function(x, y){
   if (!is.numeric(x) || !is.numeric(y)) 
     stop("input vector must be numeric")
