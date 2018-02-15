@@ -4,7 +4,7 @@
 #' @param y a value of numeric values
 #' @return the population level correlation of the inputs is returned.
 
-cor_pop = f unction(x, y){
+cor_pop = function(x, y){
   # note that for large samples the difference between cor_sample() and cor_pop() will be trivially small.
   # it only really matters if n is low (e.g. around 50 values).
   if (!is.numeric(x) || !is.numeric(y))
