@@ -8,7 +8,8 @@ Maintainer: Bertie Vidgen <bertievidgen@gmail.com>
 Description: Functions for the OII's Big Data Analytics class
 Imports: ggplot2,
         dplyr,
-        zoo
+        zoo,
+        grid
 License: MIT
 LazyData: TRUE
 RoxygenNote: 6.0.1
