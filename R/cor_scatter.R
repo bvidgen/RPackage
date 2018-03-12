@@ -53,7 +53,7 @@ cor_scatter = function(x, y=NULL, lags, period = '', x.lab = 'x', y.lab = 'y'){
     start = df[1:(total-lag_len), 1] # x value
     end = df[(1 + lag_len):total, 2] # y value
     df_temp = as.data.frame(cbind(start,end))
-    title = title = paste('time lag of ', lag_len, period)
+    title = title = paste('time lag of', lag_len, period)
     plot = ggplot(df_temp, 
                   aes(start,end)) + 
       geom_point() + 
