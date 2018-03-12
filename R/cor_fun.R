@@ -5,7 +5,7 @@
 #' @param y a vector of numeric values #optional input.
 #' @param lag.max the total number of lag times that cross-correlation or autocorrelation  will be calculated for.
 #' @param wrap determines whether bounded periodicty should be used (wrap=T). Bounded periodicity means that the  values 'wrap round'. Usually, not required.
-#' @param level determines whether correlation is calculated using the population-level correlation denominator of 'n' or the sample-level correlation demoninator of 'n-1'. Level only accepts values of 'population' or 'sample'. By default it is set to 'population'.
+#' @param level determines whether correlation is calculated using the population-level correlation denominator of 'n' or the sample-level correlation demoninator of 'n-1'. Level only accepts values of 'population' or 'sample'. By default it is set to 'sample'.
 #' @return cor.out object is returned. There are nine variables that can be accessed: cor, lag, series, x, y, fit_best, wrap, type, level, conf.int.
 #' @export
 
@@ -174,7 +174,7 @@ cor_fun = function(x, y=NULL, lag.max=200, wrap=F, level='sample'){
           x1 = x
           y1 = y
         } else{
-          x1 = x[1: 1000] # 'x' just stays stationary and is always the same; it always covers the full range of x values.
+          x1 = x # 'x' just stays stationary and is always the same; it always covers the full range of x values.
           #y1 = c(y[1:dist], y[(dist+1): boun values.
           y1 = y[c((1+j):bound, 1:j)]} # this 'wraps around', by concatenating the lag values with the earlier values.          }
         

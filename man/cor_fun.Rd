@@ -15,7 +15,7 @@ cor_fun(x, y = NULL, lag.max = 200, wrap = F, level = "sample")
 
 \item{wrap}{determines whether bounded periodicty should be used (wrap=T). Bounded periodicity means that the  values 'wrap round'. Usually, not required.}
 
-\item{level}{determines whether correlation is calculated using the population-level correlation denominator of 'n' or the sample-level correlation demoninator of 'n-1'. Level only accepts values of 'population' or 'sample'. By default it is set to 'population'.}
+\item{level}{determines whether correlation is calculated using the population-level correlation denominator of 'n' or the sample-level correlation demoninator of 'n-1'. Level only accepts values of 'population' or 'sample'. By default it is set to 'sample'.}
 }
 \value{
 cor.out object is returned. There are nine variables that can be accessed: cor, lag, series, x, y, fit_best, wrap, type, level, conf.int.
