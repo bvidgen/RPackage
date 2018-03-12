@@ -4,7 +4,7 @@
 \alias{cor_scatter}
 \title{cor_scatter}
 \usage{
-cor_scatter(x, y = NULL, lags)
+cor_scatter(x, y = NULL, lags, period = "", x.lab = "x", y.lab = "y")
 }
 \arguments{
 \item{x}{a vector of numeric values}
@@ -12,6 +12,12 @@ cor_scatter(x, y = NULL, lags)
 \item{y}{a vector of numeric values}
 
 \item{lags}{a list containing the values to be lagged}
+
+\item{period}{the time period over which values are lagged, e.g. days or hours}
+
+\item{x.lab}{the label for the x axes}
+
+\item{y.lab}{the label for the y axes}
 }
 \value{
 a lattice of scatter plots.
