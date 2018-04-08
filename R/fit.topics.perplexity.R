@@ -99,32 +99,3 @@ fit.topics.perplexity = function(dtm, folds, k.values, alpha, beta, control.test
   return(k_perplexity)
 }
 
-
-
-
-
-
-
-
-# Text cleaning
-# Create additional cleaning functions
-# We create a replacePunctuation function to remove punctuation
-# The inbuilt function is 'removePunctuation'. This is a bad function as it just straight up removes the punctuation
-# Words which are connected by weird punctuation get turned into new joint words e.g. 'mp>>>,,Parliament' would become 'mpParliament' rather than 'mp Parliament'
-# The function we create is 'replacePunctuation' which replaces removed punctuation with a space. In most cases, this is a far better operation
-replacePunctuation <- tm::content_transformer(function(x) {return (gsub("[[:punct:]]"," ", x))})
-
-# We create a removeSingleWords function to replace any single floating letters
-removeSingleWords <- tm::content_transformer(function(x) {return(gsub(" *\\b[[:alpha:]]{1,2}\\b *", " ", x))})
-# from: https://stackoverflow.com/questions/31203843/r-find-and-remove-all-one-to-two-letter-words
-
-# We create a stem text which removes the word endings 'ed', 'es', and 'ing' - I often find the in-built stemming function too aggressive
-stemText = content_transformer(function(x) {return(
-  sapply(strsplit(x, split = " "), function(x){
-    x = gsub(x = x, pattern = "*ed$", replacement = "")
-    x = gsub(x = x, pattern = "*es$", replacement = "")
-    x = gsub(x = x, pattern = "*ing$", replacement = "")
-    paste(x, collapse  = " ")})
-)})
-
-

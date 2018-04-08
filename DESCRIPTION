@@ -10,7 +10,8 @@ Imports: ggplot2,
         dplyr,
         zoo,
         gridExtra,
-        cowplot
+        cowplot,
+        tm
 License: MIT
 LazyData: TRUE
 RoxygenNote: 6.0.1
