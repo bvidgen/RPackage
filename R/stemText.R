@@ -3,7 +3,7 @@
 #' @param corpus Corpus from the tm package. Created by using tm::Corpus(VectorSource([text data]))
 #' @return Cleaned text
 #' @export
-
+ 
 stemText = tm::content_transformer(function(corpus) 
   {return(
   sapply(strsplit(corpus, split = " "), function(x){
