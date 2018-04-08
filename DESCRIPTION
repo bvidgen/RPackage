@@ -12,7 +12,8 @@ Imports: ggplot2,
         gridExtra,
         cowplot,
         tm,
-        tidyr
+        tidyr,
+        topicmodels
 License: MIT
 LazyData: TRUE
 RoxygenNote: 6.0.1
