@@ -5,5 +5,5 @@
 #' @export
 
 
-replaceSingleWords <- tm::content_transformer(function(corpus) {return(gsub(" *\\b[[:alpha:]]{1,2}\\b *", " ", corpus))})
+replaceSingleWords <- tm::content_transformer(function(corpus) {return(gsub(" *\\b[[:alpha:]]\\b *", " ", corpus))})
   # from: https://stackoverflow.com/questions/31203843/r-find-and-remove-all-one-to-two-letter-words
