@@ -1,4 +1,4 @@
-#' @title plot.perplexity
+#' @title plot_perplexity
 #' @description Plots the perplexity values for K, alpha and beta, showing each fold as a point and the average as a line
 #' @param data.frame Dataframe. Perplexity values returned by fit.topics.perplexity(), fit.alpha.perplexity() and fit.beta.perplexity() 
 #' @param value.write Character. What perplexity is calculated for; either 'K', 'Alpha' or 'Beta' 
@@ -8,7 +8,7 @@
 #' @export
 
 
-plot.perplexity = function(data.frame, value.write, xintercept.write, logx){
+plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
   
   if(missing(data.frame)){
     stop('data.frame is a required parameter')
