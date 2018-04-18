@@ -17,7 +17,7 @@ topic.coherence = function(ldaOut, dtm, n.terms){
   # coherence function - taken from SpeedReader package for calculating coherence 
   # replicated here rather than imported as SpeedyReader is still being developed
   # https://www.rdocumentation.org/packages/SpeedReader/versions/0.9.1/topics/topic_coherence
-  my.topic_coherence <- function(top_words,
+  my.topic.coherence <- function(top_words,
                               document_term_matrix,
                               vocabulary = NULL,
                               numeric_top_words = FALSE,
@@ -74,10 +74,10 @@ topic.coherence = function(ldaOut, dtm, n.terms){
   }
   
   # top terms in each topic
-  ldaOut.topics = as.data.frame(terms(ldaOut.clean, n.terms))
+  ldaOut.topics = as.data.frame(terms(ldaOut, n.terms))
 
   # get the coherence for each topic
-  top.coherence = c()
+  topic.coherence = c()
   
   for (i in seq(1, ncol(ldaOut.topics))){
     # get the terms for just the ith topic
@@ -91,11 +91,11 @@ topic.coherence = function(ldaOut, dtm, n.terms){
     top_words = top_words[match(colnames(document_term_matrix), top_words)]
     
     # calculate topic coherence using SpeedReader function
-    ave.top.coherence = my.topic_coherence(top_words, document_term_matrix, vocabulary = top_words,
+    top.coherence.k = my.topic.coherence(top_words, document_term_matrix, vocabulary = top_words,
                                  numeric_top_words = FALSE, K = length(top_words))
     
     # save values
-    top.coherence = c(top.coherence, ave.top.coherence)
+    topic.coherence = c(topic.coherence, top.coherence.k)
   }
   
   return(top.coherence)
