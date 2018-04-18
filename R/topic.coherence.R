@@ -98,7 +98,7 @@ topic.coherence = function(ldaOut, dtm, n.terms){
     topic.coherence = c(topic.coherence, top.coherence.k)
   }
   
-  return(top.coherence)
+  return(topic.coherence)
   
 }
 
