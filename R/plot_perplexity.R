@@ -17,7 +17,7 @@ plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
     stop('value.write is a required parameter')
   }
   
-  if(missing(x.intercept.write)){
+  if(missing(xintercept.write)){
     x.intercept.write = NULL
   }
   
