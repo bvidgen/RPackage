@@ -6,7 +6,7 @@
 #' @return vector of topic coherence scores (same length as the number of topics in the model)
 #' @export
 
-
+ 
 
 # Calculate average topic coherence
 topic.coherence = function(ldaOut, dtm, n.terms){
