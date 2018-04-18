@@ -79,19 +79,21 @@ topic.coherence = function(ldaOut, dtm, n.terms){
   # get the coherence for each topic
   topic.coherence = c()
   
+  # make the document term matrix
+  document_term_matrix = as.matrix(dtm)
+  
   for (i in seq(1, ncol(ldaOut.topics))){
     # get the terms for just the ith topic
     top_words = as.character(ldaOut.topics[, i])
     
     # create a document term matrix with just these terms
-    document_term_matrix = as.matrix(dtm)
-    document_term_matrix = document_term_matrix[,which(colnames(document_term_matrix) %in% top_words)]
+    document_term_matrix_k = document_term_matrix[,which(colnames(document_term_matrix) %in% top_words)]
     
     # check that the ordering of the colnames matches up with the ordering of the terms
-    top_words = top_words[match(colnames(document_term_matrix), top_words)]
+    top_words = top_words[match(colnames(document_term_matrix_k), top_words)]
     
     # calculate topic coherence using SpeedReader function
-    top.coherence.k = my.topic.coherence(top_words, document_term_matrix, vocabulary = top_words,
+    top.coherence.k = my.topic.coherence(top_words, document_term_matrix_k, vocabulary = top_words,
                                  numeric_top_words = FALSE, K = length(top_words))
     
     # save values
