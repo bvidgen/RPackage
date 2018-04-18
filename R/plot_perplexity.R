@@ -72,7 +72,7 @@ plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
   data.frame.plot.average$perplexity = as.numeric(data.frame.plot.average$perplexity)
   
   # Plot results
-  if(missing(xintercept.write) & logx == F){
+  if(class(xintercept.write) == 'NULL' & logx == F){
     p.out = ggplot() + 
       geom_point(data = data.frame.plot, aes(value, perplexity)) + # scatter plot of values, calculated from each of the k-folds testing (for each value of K we get the number of dots which we set 'folds' equal to)
       geom_line(data = data.frame.plot.average, aes(value, perplexity)) + # line of values, calculated as an average from the k-folds testing
@@ -80,7 +80,7 @@ plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
       xlab(value.write) +
       ggtitle(paste0('Perplexity vs. ', value.write)) }
   
-  if(missing(xintercept.write) & logx == T){
+  if(class(xintercept.write) == 'NULL' & logx == T){
     p.out = ggplot() + 
       geom_point(data = data.frame.plot, aes(value, perplexity)) + # scatter plot of values, calculated from each of the k-folds testing (for each value of K we get the number of dots which we set 'folds' equal to)
       geom_line(data = data.frame.plot.average, aes(value, perplexity)) + # line of values, calculated as an average from the k-folds testing
@@ -89,7 +89,7 @@ plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
       ggtitle(paste0('Perplexity vs. ', value.write)) +
       scale_x_log10() }
   
-  if(!(missing(xintercept.write)) & logx == F){
+  if(class(xintercept.write) != 'NULL' & logx == F){
     p.out = ggplot() + 
       geom_point(data = data.frame.plot, aes(value, perplexity)) + # scatter plot of values, calculated from each of the k-folds testing (for each value of K we get the number of dots which we set 'folds' equal to)
       geom_line(data = data.frame.plot.average, aes(value, perplexity)) + # line of values, calculated as an average from the k-folds testing
@@ -98,7 +98,7 @@ plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
       ggtitle(paste0('Perplexity vs. ', value.write)) +
       geom_vline(xintercept = xintercept.write, linetype = 2, color = 'red')}
   
-  if(!(missing(xintercept.write)) & logx == T){
+  if(class(xintercept.write) != 'NULL' & logx == T){
     p.out = ggplot() + 
       geom_point(data = data.frame.plot, aes(value, perplexity)) + # scatter plot of values, calculated from each of the k-folds testing (for each value of K we get the number of dots which we set 'folds' equal to)
       geom_line(data = data.frame.plot.average, aes(value, perplexity)) + # line of values, calculated as an average from the k-folds testing
