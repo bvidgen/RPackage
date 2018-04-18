@@ -18,7 +18,7 @@ plot_perplexity = function(data.frame, value.write, xintercept.write, logx){
   }
   
   if(missing(xintercept.write)){
-    x.intercept.write = NULL
+    xintercept.write = NULL
   }
   
   if(missing(logx)){
